@@ -2,10 +2,10 @@ console.log("Express Tutorial");
 
 const http = require("http");
 const { readFileSync } = require("fs");
-const homePage = readFileSync("./lemonholidays/index.html");
-const homeStyles = readFileSync("./lemonholidays/style.css");
-const homeJS = readFileSync("./navbar-app/logo.svg");
-const homeImage = readFileSync("./lemonholidays/app1.js");
+const homePage = readFileSync("./navbar-app/index.html");
+const homeStyles = readFileSync("./navbar-app/styles.css");
+const homeImage = readFileSync("./navbar-app/logo.svg");
+const homeLogic = readFileSync("./navbar-app/browser-app.js");
 
 const server = http.createServer((req, res) => {
   const url = req.url;
@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
     res.end();
   }
   //styles for home page
-  else if (url === "/style.css") {
+  else if (url === "/styles.css") {
     res.writeHead(200, { "content-type": "text/css" });
     res.write(homeStyles);
     res.end();
@@ -28,9 +28,9 @@ const server = http.createServer((req, res) => {
     res.end();
   }
   //logic
-  else if (url === "/app1.js") {
+  else if (url === "/browser-app.js") {
     res.writeHead(200, { "content-type": "text/javascript" });
-    res.write(homeJS);
+    res.write(homeLogic);
     res.end();
   }
 });
