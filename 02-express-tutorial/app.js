@@ -7,9 +7,9 @@ const path = require("path");
 
 app.use(express.static('./public'))
 
-app.get('/', (req,res)=>{
-  res.sendFile(path.resolve(__dirname,'./navbar-app/index.html'))
-})
+// app.get('/', (req,res)=>{
+//   res.sendFile(path.resolve(__dirname,'./navbar-app/index.html'))
+// })
 
 app.get('/about', (req,res)=>{
   res.send("About us page")
