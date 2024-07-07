@@ -1,27 +1,6 @@
-console.log("Express Tutorial");
-
+console.log("app.js running...");
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
-const logger = require("./logger");
-// const loggerTwo = require("./loggerTwo");
-const authorize = require("./authorize");
-
-// app.use(logger, authorize);
-// // app.use("/api/", loggerTwo);
-
-app.use(morgan("tiny"));
-app.get("/", (req, res) => {
-  res.send("home page");
-});
-
-app.get("/api/about", (req, res) => {
-  res.send("about page");
-});
-
-app.get("/api/products", (req, res) => {
-  res.send("products page");
-});
 
 app.listen(5000, () => {
   console.log("server listening to port 5000");
