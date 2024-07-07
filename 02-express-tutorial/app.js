@@ -2,13 +2,15 @@ console.log("Express Tutorial");
 
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
 const logger = require("./logger");
-const loggerTwo = require("./loggerTwo");
+// const loggerTwo = require("./loggerTwo");
 const authorize = require("./authorize");
 
-app.use(logger, authorize);
-// app.use("/api/", loggerTwo);
+// app.use(logger, authorize);
+// // app.use("/api/", loggerTwo);
 
+app.use(morgan("tiny"));
 app.get("/", (req, res) => {
   res.send("home page");
 });
